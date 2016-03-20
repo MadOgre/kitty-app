@@ -1,0 +1,15 @@
+<h2>User Profile</h2>
+
+<p><strong>Full Name: </strong> <%= @user.fullname %></p> 
+<p><strong>Username: </strong> <%= @user.username %></p>
+<p><strong>Email: </strong> <%= @user.email %></p>
+
+
+<p><strong>Bio: </strong> </p>
+
+<% if @user.slug %>
+<p><strong>slug: </strong> <%= @user.slug %></p>
+<% end %>
+		
+<%= link_to "Update", edit_user_path(@user) %>
+<%= link_to "Delete", user_path(@user), method: :delete, data: {confirm: "Are you sure?"} %>
